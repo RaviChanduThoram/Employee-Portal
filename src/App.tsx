@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState,useEffect } from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline, Box, Grid } from '@mui/material';
+import theme from './styles/themes'; // Ensure you have a theme file
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import axios from 'axios';
 
-function App() {
+
+
+
+const App: React.FC = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  
+
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{ display: 'flex' }}>
+        <Header onToggle={handleDrawerToggle} drawerOpen={drawerOpen} />
+        <Sidebar openDrawer={drawerOpen} onItemSelect={(item) => console.log(item)} />
+        <Box component="main"
+          sx={{
+            flexGrow: 1,
+            p: 3,
+            marginLeft: drawerOpen ? 240 : 0, // Adjust margin based on drawer state
+            transition: theme.transitions.create('margin', {
+              easing: theme.transitions.easing.sharp,
+              duration: theme.transitions.duration.leavingScreen,
+            }),
+          }} >
+        </Box>
+      </Box>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

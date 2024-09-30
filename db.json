@@ -1,0 +1,45 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "admin",
+        "role": "admin"
+      },
+      {
+        "id": 2,
+        "username": "employee",
+        "role": "employee"
+      }
+    ],
+    "menuItems": [
+      {
+        "role": "admin",
+        "items": [
+          { "name": "Dashboard", "icon": "Dashboard", "path": "/dashboard" },
+          { "name": "Employee Directory", "icon": "People", "path": "/employee-directory" },
+          { "name": "Manage Employees", "icon": "Edit", "path": "/manage-employees" },
+          { "name": "Leave Requests", "icon": "Holiday", "path": "/leave-requests" },
+          { "name": "Payroll", "icon": "Money", "path": "/payroll" },
+          { "name": "Timesheets", "icon": "Schedule", "path": "/timesheets" },
+          { "name": "Performance Reviews", "icon": "Assessment", "path": "/performance-reviews" },
+          { "name": "Reports", "icon": "BarChart", "path": "/reports" },
+          { "name": "Team Management", "icon": "Groups", "path": "/team-management" },
+          { "name": "Settings", "icon": "Settings", "path": "/settings" }
+        ]
+      },
+      {
+        "role": "employee",
+        "items": [
+          { "name": "Dashboard", "icon": "Dashboard", "path": "/dashboard" },
+          { "name": "My Profile", "icon": "Person", "path": "/my-profile" },
+          { "name": "Leave Requests", "icon": "Event", "path": "/leave-requests" },
+          { "name": "Payroll", "icon": "Money", "path": "/payroll" },
+          { "name": "Timesheets", "icon": "Schedule", "path": "/timesheets" },
+          { "name": "Attendance", "icon": "CheckCircle", "path": "/attendance" },
+          { "name": "Performance Reviews", "icon": "Assessment", "path": "/performance-reviews" },
+          { "name": "Feedback", "icon": "Feedback", "path": "/feedback" }
+        ]
+      }
+    ]
+  }
+  
